@@ -29,8 +29,8 @@ const HeroSection = () => {
 						/>
 					</h1>
 					<p className='text-[#adb7be] mb-6 text-base lg:text-xl'>
-						I'm a full-stack developer and I'm passionate about building amazing
-						web applications.
+						A full-time frontend developer dedicated to creating user-friendly
+						UI interfaces and delivering a smooth browsing experience.
 					</p>
 					<div>
 						<button className='px-6 py-3 w-full sm:w-fit sm:h-fit rounded-full mr-4 mb-4 bg-gradient-to-br from-blue-700 to-cyan-400 text-white'>
