@@ -13,9 +13,15 @@ const NavLink = [
 const Navbar = () => {
 	const [navbarOpen, setNavbarOpen] = useState(false)
 	return (
-		<nav className='fixed top-0 left-0 right-0 bg-[#121212] bg-opacity-90'>
-			<div className='flex flex-wrap items-center justify-between mx-auto p-4'>
-				<Link href='/' className='text-2xl md:text-5xl text-white'>
+		<nav
+			className='fixed z-50 top-0 left-0 right-0 bg-opacity-25 backdrop-blur'
+			style={{
+				boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.8)",
+				borderBottom: "1px",
+			}}>
+			<div className='h-1 bg-gradient-to-r from-red-800 to-orange-700'></div>
+			<div className='flex flex-wrap items-center justify-between mx-auto p-1'>
+				<Link href='/' className='text-2xl md:text-2xl text-white'>
 					HIBI’s Site
 				</Link>
 				<div className='mobile-menu block md:hidden'>
@@ -34,7 +40,7 @@ const Navbar = () => {
 					)}
 				</div>
 				<div className='menu hidden md:block md:w-auto' id='navbar'>
-					<ul className='flex p-4 md:p-4 md:flex-row md:space-x-8 mt-0'>
+					<ul className='flex p-x-1 md:p-x-1 md:flex-row md:space-x-8 mt-0'>
 						{NavLink.map((link, index) => (
 							<li key={index}>
 								<NavItem href={link.href} title={link.title} />

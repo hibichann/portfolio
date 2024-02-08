@@ -1,14 +1,18 @@
 import React from "react"
 import Link from "next/link"
-
+import styles from "../css/navitem.module.scss"
+console.log(styles)
 const NavItem = ({ href, title }) => {
 	return (
 		// <li >
-		<Link
-			className='inline-block p-4 text-[#adb7be] text-2xl sm:text-xl hover:border-b hover:text-white transition-all'
-			href={href}>
-			{title}
-		</Link>
+		<div className={styles.item}>
+			<Link
+				className='inline-block p-1 text-[#adb7be] text-2xl sm:text-xl hover:text-white transition-all'
+				href={href}>
+				{title}
+			</Link>
+			<div className={styles.routeline}></div>
+		</div>
 	)
 }
 
