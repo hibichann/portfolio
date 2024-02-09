@@ -1,7 +1,7 @@
 import React from "react"
 
 function aaa() {
-	return <div>bb</div>
+	return <div>aaa</div>
 }
 
 export default aaa

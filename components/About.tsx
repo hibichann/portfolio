@@ -1,8 +1,9 @@
 "use client"
 import React, { useState } from "react"
 import Image from "next/image"
+import { Data } from "@/types/about"
 const About = () => {
-	let data = [
+	let data:Data[] = [
 		{
 			title: "简介",
 			content: `全职前端开发者，致力于创造用户友好的UI界面，并提供丝滑的浏览体验。使用Vue2/Vue3/React构建现代化的网站。
@@ -25,9 +26,9 @@ const About = () => {
 			`,
 		},
 	]
-	let unSelect =
+	let unSelect:string =
 		"bg-[#333] text-white px-4 py-2 mr-4 transition duration-300 ease-in-out hover:bg-blue-400 hover:text-white"
-	let selected =
+	let selected:string =
 		"bg-blue-600 text-white px-4 py-2 mr-4 transition duration-300 ease-in-out"
 	let [selIdx, setSelIdx] = useState(0)
 	return (

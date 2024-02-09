@@ -1,6 +1,6 @@
-import HeroSection from "./components/HeroSection"
-import Navbar from "./components/Navbar"
-import About from "./components/About"
+import HeroSection from "@/components/HeroSection"
+import Navbar from "@/components/Navbar"
+import About from "@/components/About"
 export default function Home() {
 	return (
 		<main className='flex min-h-screen flex-col bg-bg0 bg-fixed bg-cover'>

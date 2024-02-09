@@ -1,6 +1,6 @@
 import React from "react"
 import Link from "next/link"
-import styles from "../css/navitem.module.scss"
+import styles from "@/styles/navitem.module.scss"
 console.log(styles)
 const NavItem = ({ href, title }) => {
 	return (
