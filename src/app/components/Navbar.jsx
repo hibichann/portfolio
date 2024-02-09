@@ -20,7 +20,7 @@ const Navbar = () => {
 				borderBottom: "1px",
 			}}>
 			<div className='h-1 bg-gradient-to-r from-red-800 to-orange-700'></div>
-			<div className='flex flex-wrap items-center justify-between mx-auto p-1'>
+			<div className='flex flex-wrap items-center justify-between mx-auto'>
 				<Link href='/' className='text-2xl md:text-2xl text-white'>
 					HIBI’s Site
 				</Link>
@@ -49,7 +49,14 @@ const Navbar = () => {
 					</ul>
 				</div>
 			</div>
-			{navbarOpen ? <MenuOverlay links={NavLink} /> : null}
+			{navbarOpen ? (
+				<MenuOverlay
+					links={NavLink}
+					className={`transition-all ease-in-out duration-500 overflow-hidden ${
+						navbarOpen ? "max-h-" : "max-h-0"
+					}`}
+				/>
+			) : null}
 		</nav>
 	)
 }

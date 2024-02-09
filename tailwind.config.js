@@ -14,6 +14,9 @@ module.exports = {
 					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
 				bg0: "url('/bg/bg0.png')",
 			},
+			transitionProperty: {
+				scale: "transform",
+			},
 		},
 	},
 	plugins: [],
