@@ -6,7 +6,7 @@ import MenuOverlay from "./MenuOverlay"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid"
 const NavLink = [
 	{ href: "/", title: "Home" },
-	{ href: "#about", title: "About" },
+	{ href: "/about", title: "About" },
 	{ href: "#projects", title: "Projects" },
 	{ href: "#contact", title: "Contact" },
 ]
@@ -14,7 +14,7 @@ const Navbar = () => {
 	const [navbarOpen, setNavbarOpen] = useState(false)
 	return (
 		<nav
-			className='fixed z-50 top-0 left-0 right-0 bg-opacity-25 backdrop-blur'
+			className='backdrop-brightness-75 fixed top-0 left-0 right-0 z-50 bg-opacity-25 backdrop-blur'
 			style={{
 				boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.8)",
 				borderBottom: "1px",
@@ -42,7 +42,7 @@ const Navbar = () => {
 				<div className='menu hidden md:block md:w-auto' id='navbar'>
 					<ul className='flex p-x-1 md:p-x-1 md:flex-row md:space-x-8 mt-0'>
 						{NavLink.map((link, index) => (
-							<li key={index}>
+							<li key={index} className='backdrop-brightness-90'>
 								<NavItem href={link.href} title={link.title} />
 							</li>
 						))}

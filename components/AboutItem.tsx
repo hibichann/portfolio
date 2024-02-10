@@ -2,8 +2,8 @@
 import React, { useState } from "react"
 import Image from "next/image"
 import { Data } from "@/types/about"
-const About = () => {
-	let data:Data[] = [
+const About = (props) => {
+	let data: Data[] = [
 		{
 			title: "简介",
 			content: `全职前端开发者，致力于创造用户友好的UI界面，并提供丝滑的浏览体验。使用Vue2/Vue3/React构建现代化的网站。
@@ -26,42 +26,44 @@ const About = () => {
 			`,
 		},
 	]
-	let unSelect:string =
+	let unSelect: string =
 		"bg-[#333] text-white px-4 py-2 mr-4 transition duration-300 ease-in-out hover:bg-blue-400 hover:text-white"
-	let selected:string =
+	let selected: string =
 		"bg-blue-600 text-white px-4 py-2 mr-4 transition duration-300 ease-in-out"
 	let [selIdx, setSelIdx] = useState(0)
 	return (
-		<section className='text-white'>
-			<div className='md:grid md:grid-cols-2 gap-8 items-center p-8 xl:gap-16 sm:p-4'>
-				<div className='hidden sm:block'>
-					<Image
-						className='place-self-center'
-						src='/images/about.jpg'
-						width={300}
-						height={300}
-						alt='CSS'></Image>
-				</div>
-				<div className=''>
-					<h2 className='text-4xl font-bold mb-4'>About me</h2>
-					<div className='flex flex-row mb-8'>
-						{data.map((item, index) => {
-							return (
-								<button
-									key={index}
-									className={index === selIdx ? selected : unSelect}
-									onClick={() => {
-										setSelIdx(index)
-									}}>
-									{item.title}
-								</button>
-							)
-						})}
-					</div>
-					<p className='whitespace-pre-line h-72'>{data[selIdx].content}</p>
-				</div>
+		<div
+			className={
+				"md:grid md:grid-cols-2 gap-8 items-center p-8 xl:gap-16 sm:p-4 " +
+				props.className
+			}>
+			<div className='hidden sm:block'>
+				<Image
+					className='place-self-center'
+					src='/images/about.jpg'
+					width={300}
+					height={300}
+					alt='CSS'></Image>
 			</div>
-		</section>
+			<div className=''>
+				<h2 className='text-4xl font-bold mb-4'>About me</h2>
+				<div className='flex flex-row mb-8'>
+					{data.map((item, index) => {
+						return (
+							<button
+								key={index}
+								className={index === selIdx ? selected : unSelect}
+								onClick={() => {
+									setSelIdx(index)
+								}}>
+								{item.title}
+							</button>
+						)
+					})}
+				</div>
+				<p className='whitespace-pre-line h-72'>{data[selIdx].content}</p>
+			</div>
+		</div>
 	)
 }
 
